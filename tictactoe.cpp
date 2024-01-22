@@ -52,6 +52,16 @@ void resetSuggestions()
     }
 }
 
+void printRed(char x[], int j)
+{
+    cout << "\033[1;31m" << x[j] << "\033[0m";
+}
+
+void printBlue(char x[], int j)
+{
+    cout << "\033[1;34m" << x[j] << "\033[0m";
+}
+
 void draw_spielfeld(char x[10])
 {
     system("cls");
@@ -59,11 +69,150 @@ void draw_spielfeld(char x[10])
     cout << endl;
 
     cout << "    0   1   2 " << endl << endl;
-    cout << "0   " << x[1] << " | " << x[2] << " | " << x[3] << endl; // variablen einsetzen
+    cout << "0   ";
+    
+    if (x[1] == 'X')
+    {
+        printRed(feld, 1);
+    }
+    if (x[1] == 'O')
+    {
+        printBlue(feld, 1);
+    }
+    if (x[1] == '1')
+    {
+        cout << x[1];
+    }
+    
+    cout << " | ";
+    
+    if (x[2] == 'X')
+    {
+        printRed(feld, 2);
+    }
+    if (x[2] == 'O')
+    {
+        printBlue(feld, 2);
+    }
+    if (x[2] == '2')
+    {
+        cout << x[2];
+    }
+    
+    cout << " | ";
+    
+    if (x[3] == 'X')
+    {
+        printRed(feld, 3);
+    }
+    if (x[3] == 'O')
+    {
+        printBlue(feld, 3);
+    }
+    if (x[3] == '3')
+    {
+        cout << x[3];
+    }
+    
+    cout << endl; // variablen einsetzen
+
     cout << "   ---+---+---" << endl;
-    cout << "1   " << x[4] << " | " << x[5] << " | " << x[6] << endl; // variablen einsetzen
+
+    cout << "1   ";
+    
+    if (x[4] == 'X')
+    {
+        printRed(feld, 4);
+    }
+    if (x[4] == 'O')
+    {
+        printBlue(feld, 4);
+    }
+    if (x[4] == '4')
+    {
+        cout << x[4];
+    }
+    
+    cout << " | ";
+    
+    if (x[5] == 'X')
+    {
+        printRed(feld, 5);
+    }
+    if (x[5] == 'O')
+    {
+        printBlue(feld, 5);
+    }
+    if (x[5] == '5')
+    {
+        cout << x[5];
+    }
+    
+    cout << " | ";
+    
+    if (x[6] == 'X')
+    {
+        printRed(feld, 6);
+    }
+    if (x[6] == 'O')
+    {
+        printBlue(feld, 6);
+    }
+    if (x[6] == '6')
+    {
+        cout << x[6];
+    }
+    
+    cout << endl; // variablen einsetzen
+
     cout << "   ---+---+---" << endl;
-    cout << "2   " << x[7] << " | " << x[8] << " | " << x[9] << endl; // variablen einsetzen
+
+    cout << "2   ";
+    
+    if (x[7] == 'X')
+    {
+        printRed(feld, 7);
+    }
+    if (x[7] == 'O')
+    {
+        printBlue(feld, 7);
+    }
+    if (x[7] == '7')
+    {
+        cout << x[7];
+    }
+    
+    cout << " | ";
+    
+    if (x[8] == 'X')
+    {
+        printRed(feld, 8);
+    }
+    if (x[8] == 'O')
+    {
+        printBlue(feld, 8);
+    }
+    if (x[8] == '8')
+    {
+        cout << x[8];
+    }
+    
+    cout << " | ";
+    
+    if (x[9] == 'X')
+    {
+        printRed(feld, 9);
+    }
+    if (x[9] == 'O')
+    {
+        printBlue(feld, 9);
+    }
+    if (x[9] == '9')
+    {
+        cout << x[9];
+    }
+    
+    cout << endl; // variablen einsetzen
 
     if (falscheEingabe == true)
     {
@@ -752,11 +901,13 @@ int main()
             */
             if (gewonnen1 == true)
             {
-                cout << spieler1 << " hat gewonnen!" << endl;
+                cout << "\033[1;31m" << spieler1 << "\033[0m" << " hat gewonnen!" << endl;
+                //cout << spieler1 << " hat gewonnen!" << endl;
             }
             else if (gewonnen2 == true)
             {
-                cout << spieler2 << " hat gewonnen!" << endl;
+                cout << "\033[1;34m" << spieler2 << "\033[0m" << " hat gewonnen!" << endl;
+                //cout << spieler2 << " hat gewonnen!" << endl;
             }
 
             return 0;
