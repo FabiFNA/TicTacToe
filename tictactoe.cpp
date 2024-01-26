@@ -240,6 +240,8 @@ int input()
         {
             feld[eingabe] = 'X';
             falscheEingabe = false;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     }
 
@@ -260,6 +262,8 @@ int input()
             {
                 feld[eingabe] = 'O';
                 falscheEingabe = false;
+                cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
         }
         else if (KI == true)
